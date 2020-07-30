@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AudioPlaybackCompose</string>
+    <string name="pause">Pause</string>
 </resources>
