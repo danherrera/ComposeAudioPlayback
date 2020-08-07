@@ -36,7 +36,6 @@ fun <S, A> redux(
 
   val reducedMiddleware = middlewares.reduce { acc, middleware ->
     { state, action, next ->
-      Log.d("Middleware Reducer", "Reducing...")
       middleware(state, action) { nextAction ->
         acc(state, nextAction) { accAction ->
           next(accAction)
