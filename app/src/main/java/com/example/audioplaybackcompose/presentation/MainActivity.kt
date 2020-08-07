@@ -3,22 +3,24 @@ package com.example.audioplaybackcompose.presentation
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.ui.core.Modifier
-import androidx.ui.core.setContent
-import androidx.ui.foundation.Text
-import androidx.ui.layout.Column
-import androidx.ui.layout.padding
-import androidx.ui.material.Button
-import androidx.ui.material.MaterialTheme
-import androidx.ui.material.Surface
-import androidx.ui.unit.dp
+import androidx.compose.foundation.Text
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Button
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.setContent
+import androidx.compose.ui.unit.dp
 import com.example.audioplaybackcompose.R
 import com.example.audioplaybackcompose.StateAction
 import com.example.audioplaybackcompose.presentation.media.MediaActivity
 import com.example.audioplaybackcompose.presentation.profile.ProfileActivity
 import com.example.audioplaybackcompose.presentation.theme.AudioPlaybackComposeTheme
 import com.example.audioplaybackcompose.redux
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
   private object Main : StateAction<MainState, MainAction>

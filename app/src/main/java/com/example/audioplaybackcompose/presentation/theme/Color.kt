@@ -1,6 +1,7 @@
 package com.example.audioplaybackcompose.presentation.theme
 
-import androidx.ui.graphics.Color
+import androidx.compose.ui.graphics.Color
+
 
 val purple200 = Color(0xFFBB86FC)
 val purple500 = Color(0xFF6200EE)

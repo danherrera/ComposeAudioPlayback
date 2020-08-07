@@ -3,8 +3,8 @@
 package com.example.audioplaybackcompose
 
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.Composable
-import androidx.compose.state
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.state
 
 typealias Dispatch<A> = (action: A) -> Unit
 typealias Reducer<S, A> = (state: S, action: A) -> S

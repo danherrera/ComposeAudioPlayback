@@ -8,24 +8,26 @@ import android.support.v4.media.MediaMetadataCompat
 import android.support.v4.media.session.MediaControllerCompat
 import android.support.v4.media.session.PlaybackStateCompat
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.Composable
-import androidx.compose.state
-import androidx.ui.core.Modifier
-import androidx.ui.core.setContent
-import androidx.ui.foundation.Text
-import androidx.ui.layout.Column
-import androidx.ui.layout.Row
-import androidx.ui.layout.padding
-import androidx.ui.material.Button
-import androidx.ui.material.LinearProgressIndicator
-import androidx.ui.material.MaterialTheme
-import androidx.ui.material.Surface
+import androidx.compose.foundation.Text
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Button
+import androidx.compose.material.LinearProgressIndicator
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.state
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.setContent
+import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
-import androidx.ui.unit.dp
 import com.example.audioplaybackcompose.Dispatch
 import com.example.audioplaybackcompose.Middleware
 import com.example.audioplaybackcompose.presentation.theme.AudioPlaybackComposeTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MediaActivity : AppCompatActivity() {
 
   private lateinit var mediaBrowser: MediaBrowserCompat
