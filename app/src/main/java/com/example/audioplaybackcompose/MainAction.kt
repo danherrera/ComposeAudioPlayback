@@ -1,5 +1,8 @@
 package com.example.audioplaybackcompose
 
 sealed class MainAction {
-  object NavigateToMedia : MainAction()
+  sealed class Navigate : MainAction() {
+    object ToMedia : Navigate()
+    object ToProfile : Navigate()
+  }
 }

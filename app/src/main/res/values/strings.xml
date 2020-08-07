@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">AudioPlaybackCompose</string>
     <string name="pause">Pause</string>
+    <string name="activity_main_title">Menu</string>
+    <string name="activity_media_title">Media</string>
+    <string name="activity_profile_title">Profile</string>
 </resources>

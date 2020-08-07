@@ -13,6 +13,7 @@ import androidx.ui.material.MaterialTheme
 import androidx.ui.material.Surface
 import androidx.ui.unit.dp
 import com.example.audioplaybackcompose.media.MediaActivity
+import com.example.audioplaybackcompose.profile.ProfileActivity
 import com.example.audioplaybackcompose.theme.AudioPlaybackComposeTheme
 
 class MainActivity : AppCompatActivity() {
@@ -24,8 +25,12 @@ class MainActivity : AppCompatActivity() {
 
     setContent {
       val navMiddleware = Main.PreReducerMiddleware { _, action ->
-        if (action == MainAction.NavigateToMedia) {
-          startActivity(Intent(this, MediaActivity::class.java))
+        if (action is MainAction.Navigate) {
+          val nextActivityClass = when (action) {
+            MainAction.Navigate.ToMedia -> MediaActivity::class.java
+            MainAction.Navigate.ToProfile -> ProfileActivity::class.java
+          }
+          startActivity(Intent(this, nextActivityClass))
         }
       }
 
@@ -37,8 +42,11 @@ class MainActivity : AppCompatActivity() {
       AudioPlaybackComposeTheme {
         Surface(color = MaterialTheme.colors.background) {
           Column(modifier = Modifier.padding(16.dp)) {
-            Button(onClick = { dispatch(MainAction.NavigateToMedia) }) {
+            Button(onClick = { dispatch(MainAction.Navigate.ToMedia) }) {
               Text(text = "Media")
+            }
+            Button(onClick = { dispatch(MainAction.Navigate.ToProfile) }) {
+              Text(text = "Profile")
             }
           }
         }

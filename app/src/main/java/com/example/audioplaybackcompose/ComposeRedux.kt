@@ -2,7 +2,6 @@
 
 package com.example.audioplaybackcompose
 
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
 import androidx.compose.state
@@ -30,7 +29,7 @@ fun <S, A> postReducerMiddleware(block: (previousState: S, latestState: S, actio
 fun <S, A> redux(
   initialState: S,
   reducer: Reducer<S, A> = { state, _ -> state },
-  middlewares: List<Middleware<S, A>> = emptyList()
+  middlewares: List<Middleware<S, A>> = listOf { _, action, next -> next(action) }
 ): Pair<S, Dispatch<A>> {
   val (state, setState) = state { initialState }
 
@@ -52,15 +51,37 @@ fun <S, A> redux(
 }
 
 abstract class ReduxActivity<S, A> : AppCompatActivity() {
-  fun PreReducerMiddleware(block: (state: S, action: A) -> Unit): Middleware<S, A> = preReducerMiddleware(block)
-  fun PostReducerMiddleware(block: (previousState: S, latestState: S, action: A) -> Unit): Middleware<S, A> = postReducerMiddleware(block)
+  fun PreReducerMiddleware(block: (state: S, action: A) -> Unit): Middleware<S, A> =
+    preReducerMiddleware(block)
+
+  fun PostReducerMiddleware(block: (previousState: S, latestState: S, action: A) -> Unit): Middleware<S, A> =
+    postReducerMiddleware(block)
+
   fun Middleware(middleware: Middleware<S, A>): Middleware<S, A> = middleware
   fun Reducer(reducer: Reducer<S, A>) = reducer
+
+  @Composable
+  fun Redux(
+    initialState: S,
+    reducer: Reducer<S, A> = { state, _ -> state },
+    middlewares: List<Middleware<S, A>> = listOf { _, action, next -> next(action) }
+  ): Pair<S, Dispatch<A>> = redux(initialState, reducer, middlewares)
 }
 
 interface StateAction<S, A> {
-  fun PreReducerMiddleware(block: (state: S, action: A) -> Unit): Middleware<S, A> = preReducerMiddleware(block)
-  fun PostReducerMiddleware(block: (previousState: S, latestState: S, action: A) -> Unit): Middleware<S, A> = postReducerMiddleware(block)
+  fun PreReducerMiddleware(block: (state: S, action: A) -> Unit): Middleware<S, A> =
+    preReducerMiddleware(block)
+
+  fun PostReducerMiddleware(block: (previousState: S, latestState: S, action: A) -> Unit): Middleware<S, A> =
+    postReducerMiddleware(block)
+
   fun Middleware(middleware: Middleware<S, A>): Middleware<S, A> = middleware
   fun Reducer(reducer: Reducer<S, A>) = reducer
+
+  @Composable
+  fun Redux(
+    initialState: S,
+    reducer: Reducer<S, A> = { state, _ -> state },
+    middlewares: List<Middleware<S, A>> = listOf { _, action, next -> next(action) }
+  ): Pair<S, Dispatch<A>> = redux(initialState, reducer, middlewares)
 }
