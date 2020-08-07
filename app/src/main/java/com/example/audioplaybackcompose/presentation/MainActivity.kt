@@ -1,4 +1,4 @@
-package com.example.audioplaybackcompose
+package com.example.audioplaybackcompose.presentation
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,9 +12,12 @@ import androidx.ui.material.Button
 import androidx.ui.material.MaterialTheme
 import androidx.ui.material.Surface
 import androidx.ui.unit.dp
-import com.example.audioplaybackcompose.media.MediaActivity
-import com.example.audioplaybackcompose.profile.ProfileActivity
-import com.example.audioplaybackcompose.theme.AudioPlaybackComposeTheme
+import com.example.audioplaybackcompose.R
+import com.example.audioplaybackcompose.StateAction
+import com.example.audioplaybackcompose.presentation.media.MediaActivity
+import com.example.audioplaybackcompose.presentation.profile.ProfileActivity
+import com.example.audioplaybackcompose.presentation.theme.AudioPlaybackComposeTheme
+import com.example.audioplaybackcompose.redux
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,10 +46,10 @@ class MainActivity : AppCompatActivity() {
         Surface(color = MaterialTheme.colors.background) {
           Column(modifier = Modifier.padding(16.dp)) {
             Button(onClick = { dispatch(MainAction.Navigate.ToMedia) }) {
-              Text(text = "Media")
+              Text(text = getString(R.string.activity_main_menu_media))
             }
             Button(onClick = { dispatch(MainAction.Navigate.ToProfile) }) {
-              Text(text = "Profile")
+              Text(text = getString(R.string.activity_main_menu_profile))
             }
           }
         }

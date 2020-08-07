@@ -1,4 +1,4 @@
-package com.example.audioplaybackcompose.media
+package com.example.audioplaybackcompose.presentation.media
 
 import android.support.v4.media.session.PlaybackStateCompat
 

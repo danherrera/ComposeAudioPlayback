@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AudioPlaybackCompose">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.MainActivity"
             android:label="@string/activity_main_title"
             android:theme="@style/Theme.AudioPlaybackCompose.NoActionBar">
             <intent-filter>
@@ -25,17 +25,17 @@
         </activity>
 
         <activity
-            android:name=".media.MediaActivity"
+            android:name="com.example.audioplaybackcompose.presentation.media.MediaActivity"
             android:label="@string/activity_media_title"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".presentation.MainActivity" />
 
         <activity
-            android:name=".profile.ProfileActivity"
+            android:name="com.example.audioplaybackcompose.presentation.profile.ProfileActivity"
             android:label="@string/activity_profile_title"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".presentation.MainActivity" />
 
         <service
-            android:name=".media.MediaPlaybackService"
+            android:name="com.example.audioplaybackcompose.presentation.media.MediaPlaybackService"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.media.browse.MediaBrowserService" />

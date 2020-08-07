@@ -1,4 +1,4 @@
-package com.example.audioplaybackcompose.media
+package com.example.audioplaybackcompose.presentation.media
 
 import android.content.ComponentName
 import android.media.AudioManager
@@ -24,7 +24,7 @@ import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
 import com.example.audioplaybackcompose.Dispatch
 import com.example.audioplaybackcompose.Middleware
-import com.example.audioplaybackcompose.theme.AudioPlaybackComposeTheme
+import com.example.audioplaybackcompose.presentation.theme.AudioPlaybackComposeTheme
 
 class MediaActivity : AppCompatActivity() {
 

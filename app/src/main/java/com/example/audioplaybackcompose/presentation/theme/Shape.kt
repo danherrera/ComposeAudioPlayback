@@ -1,4 +1,4 @@
-package com.example.audioplaybackcompose.theme
+package com.example.audioplaybackcompose.presentation.theme
 
 import androidx.ui.foundation.shape.corner.RoundedCornerShape
 import androidx.ui.material.Shapes

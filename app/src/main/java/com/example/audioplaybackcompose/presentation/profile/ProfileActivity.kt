@@ -1,4 +1,4 @@
-package com.example.audioplaybackcompose.profile
+package com.example.audioplaybackcompose.presentation.profile
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

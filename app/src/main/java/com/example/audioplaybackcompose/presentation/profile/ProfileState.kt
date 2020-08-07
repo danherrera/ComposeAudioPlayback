@@ -1,4 +1,4 @@
-package com.example.audioplaybackcompose.profile
+package com.example.audioplaybackcompose.presentation.profile
 
 data class ProfileState(
   val firstName: String = "",

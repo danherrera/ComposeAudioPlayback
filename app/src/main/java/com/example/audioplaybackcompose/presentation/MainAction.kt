@@ -1,4 +1,4 @@
-package com.example.audioplaybackcompose
+package com.example.audioplaybackcompose.presentation
 
 sealed class MainAction {
   sealed class Navigate : MainAction() {

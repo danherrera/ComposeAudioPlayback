@@ -1,4 +1,4 @@
-package com.example.audioplaybackcompose.media
+package com.example.audioplaybackcompose.presentation.media
 
 data class MediaState(
   val isPlaying: Boolean = false,

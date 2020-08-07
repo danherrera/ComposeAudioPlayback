@@ -1,4 +1,4 @@
-package com.example.audioplaybackcompose.profile
+package com.example.audioplaybackcompose.presentation.profile
 
 sealed class ProfileAction {
   data class FirstNameTextChanged(val firstName: String): ProfileAction()
