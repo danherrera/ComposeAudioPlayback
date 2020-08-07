@@ -24,8 +24,12 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".media.MediaActivity"
+            android:parentActivityName=".MainActivity" />
+
         <service
-            android:name=".MediaPlaybackService"
+            android:name=".media.MediaPlaybackService"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.media.browse.MediaBrowserService" />

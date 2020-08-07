@@ -1,4 +1,4 @@
-package com.example.audioplaybackcompose
+package com.example.audioplaybackcompose.media
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -22,6 +22,7 @@ import android.support.v4.media.session.PlaybackStateCompat
 import androidx.core.app.NotificationCompat
 import androidx.media.MediaBrowserServiceCompat
 import androidx.media.session.MediaButtonReceiver
+import com.example.audioplaybackcompose.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.Job
@@ -88,7 +89,9 @@ class MediaPlaybackService : MediaBrowserServiceCompat() {
       val controller = mediaSession.controller
       val mediaMetaData = controller.metadata
       val description = mediaMetaData.description
-      return NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID).apply {
+      return NotificationCompat.Builder(context,
+        NOTIFICATION_CHANNEL_ID
+      ).apply {
         setChannelId(NOTIFICATION_CHANNEL_ID)
         setContentTitle(description.title)
         setContentText(description.subtitle)

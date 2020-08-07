@@ -1,4 +1,4 @@
-package com.example.audioplaybackcompose.ui
+package com.example.audioplaybackcompose.theme
 
 import androidx.compose.Composable
 import androidx.ui.foundation.isSystemInDarkTheme

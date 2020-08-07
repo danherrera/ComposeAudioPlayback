@@ -1,4 +1,4 @@
-package com.example.audioplaybackcompose.ui
+package com.example.audioplaybackcompose.theme
 
 import androidx.ui.material.Typography
 import androidx.ui.text.TextStyle
